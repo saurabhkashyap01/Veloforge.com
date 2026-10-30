@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>VeloForge – Web development agency</title>
+<meta name="description" content="VeloForge is a web development agency in Shahjahanpur, Uttar Pradesh. We design and build fast websites, online stores and web apps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b16;--bg2:#0d1428;--line:#1f2b48;--tx:#eaf0fb;--mut:#9aa8c4;--ember:#3d86ff;--ember2:#7db3ff;--ok:#5fd4a0;
+--hd:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;--bd:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--tx);font:400 16px/1.65 var(--bd);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ember2);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--hd);line-height:1.1;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:700}
+h2{font-size:clamp(1.8rem,4.2vw,2.7rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:500;letter-spacing:-.01em}
+p{margin:0}.mut{color:var(--mut)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(7,11,22,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:700 1.35rem var(--hd);display:flex;gap:9px;align-items:center}
+nav{display:none;gap:20px;align-items:center;font-size:.95rem}
+nav a{color:var(--mut);padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{color:var(--tx);border-color:var(--ember)}
+.btn{display:inline-block;background:var(--ember);color:#04112b;font-weight:500;padding:12px 22px;border-radius:8px;border:0;cursor:pointer;font:500 1rem var(--bd);transition:background .2s}
+.btn:hover{background:var(--ember2)}
+.btn.ghost{background:transparent;color:var(--tx);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--ember2)}
+nav .btn{padding:9px 16px}
+#burger{background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
+#drawer{display:none;flex-direction:column;padding:8px 20px 18px;border-top:1px solid var(--line)}
+#drawer.open{display:flex}
+#drawer a{padding:12px 0;border-bottom:1px solid var(--line);color:var(--mut)}
+@media(min-width:1000px){nav{display:flex}#burger,#drawer{display:none!important}}
+.page{display:none}.page.show{display:block}
+section.s{padding:72px 0}
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.head{max-width:620px;margin-bottom:40px}.head p{margin-top:14px;color:var(--mut)}
+.hero{padding:72px 0 56px}
+.hero h1{max-width:13ch}
+.hero .lead{max-width:48ch;margin:22px 0 30px;color:var(--mut);font-size:1.12rem}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.split{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.split{grid-template-columns:1.15fr .85fr}}
+.term{background:#0a0e1b;border:1px solid var(--line);border-radius:12px;font:13.5px/1.9 ui-monospace,Menlo,Consolas,monospace;overflow:hidden}
+.term .t{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--mut);display:flex;justify-content:space-between}
+.term .b{padding:14px 16px;min-height:236px}
+.term .l{opacity:0;transform:translateY(4px);transition:.35s}.term .l.on{opacity:1;transform:none}
+.term .ok{color:var(--ok)}.term .em{color:var(--ember2)}
+.grid{display:grid;gap:18px}
+@media(min-width:700px){.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid var(--line);border-radius:12px;padding:26px;background:var(--bg);transition:border-color .2s}
+.alt .card{background:var(--bg)}
+.card:hover{border-color:var(--ember)}
+.card h3{margin-bottom:10px}.card p{color:var(--mut);font-size:.97rem}
+.card ul{margin:14px 0 0;padding-left:18px;color:var(--mut);font-size:.95rem}
+.tag{display:inline-block;font-size:.82rem;color:var(--ember2);border:1px solid var(--line);padding:2px 10px;border-radius:99px;margin:0 6px 6px 0}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:8px}
+@media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stats b{display:block;font:700 2.2rem var(--hd)}.stats span{color:var(--mut);font-size:.92rem}
+.steps{counter-reset:s;display:grid;gap:18px}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps div{border-top:2px solid var(--ember);padding-top:16px;counter-increment:s}
+.steps h3::before{content:counter(s) ". ";color:var(--ember2)}
+.steps p{color:var(--mut);margin-top:8px;font-size:.95rem}
+.thumb{height:170px;border-radius:8px;margin-bottom:18px;border:1px solid var(--line);display:flex;align-items:end;padding:14px;font:700 1.5rem var(--hd);color:rgba(255,255,255,.92)}
+.price{font:700 2.6rem var(--hd);margin:10px 0}.price small{font:400 1rem var(--bd);color:var(--mut)}
+.card.hot{border-color:var(--ember);box-shadow:0 0 0 1px var(--ember) inset}
+.q{font-size:1.05rem;line-height:1.6}.who{margin-top:18px;color:var(--mut);font-size:.92rem}.who b{color:var(--tx);font-weight:500}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font:500 1.08rem var(--hd);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--ember2)}details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--mut);max-width:70ch}
+form{display:grid;gap:14px}
+label{display:grid;gap:6px;font-size:.93rem;color:var(--mut)}
+input,select,textarea{background:var(--bg);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:12px;font:inherit;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--ember2);outline-offset:1px;border-color:transparent}
+textarea{min-height:130px;resize:vertical}
+#msg{color:var(--ok);min-height:1.5em}
+.cta{text-align:center;padding:80px 0}.cta h2{max-width:20ch;margin:0 auto 20px}
+footer{border-top:1px solid var(--line);padding:48px 0 32px;color:var(--mut);font-size:.93rem}
+.fg{display:grid;gap:30px}@media(min-width:800px){.fg{grid-template-columns:1.4fr 1fr 1fr}}
+footer h4{margin:0 0 10px;color:var(--tx);font:500 1rem var(--hd)}footer a{display:block;padding:3px 0}footer a:hover{color:var(--tx)}
+.copy{margin-top:32px;padding-top:20px;border-top:1px solid var(--line)}
+.wrap,.card{min-width:0}
+.logo img{height:34px;width:auto;mix-blend-mode:screen}
+.logo .lk{height:96px}
+.ph{width:100%;height:300px;object-fit:cover;object-position:50% 18%;border-radius:8px;margin-bottom:18px;border:1px solid var(--line);filter:grayscale(1)}
+.thumb{text-shadow:0 1px 8px rgba(0,0,0,.5)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap bar">
+  <a href="#home" class="logo" aria-label="VeloForge home"><img src="images/logo-icon.jpg" alt=""><span>VeloForge</span></a>
+  <nav id="nav" aria-label="Main"></nav>
+  <button id="burger" aria-expanded="false" aria-controls="drawer">Menu</button>
+ </div>
+ <div id="drawer" class="wrap"></div>
+</header>
+
+<main id="app">
+<!-- HOME -->
+<div class="page" id="p-home">
+ <section class="hero"><div class="wrap split">
+  <div>
+   <h1>Websites that load fast and bring in customers.</h1>
+   <p class="lead">We’re VeloForge, a web development agency in Shahjahanpur. We build websites and web apps for shops, schools, clinics and growing brands, and we stay around after launch to keep them running.</p>
+   <div class="row"><a class="btn" href="#contact">Start a project</a><a class="btn ghost" href="#portfolio">See our work</a></div>
+  </div>
+  <div class="term" aria-hidden="true"><div class="t"><span>veloforge deploy</span><span>production</span></div><div class="b" id="term"></div></div>
+ </div></section>
+ <section class="s alt"><div class="wrap"><div class="stats">
+  <div><b>24 hrs</b><span>We reply to every enquiry</span></div><div><b>100%</b><span>Code and design belong to you</span></div>
+  <div><b>Mobile first</b><span>Every site tested on real phones</span></div><div><b>Free</b><span>First consultation call</span></div></div></div></section>
+ <section class="s"><div class="wrap"><div class="head"><h2>What we build</h2><p>One team covers design, engineering and launch, so nothing gets lost between handoffs.</p></div><div class="grid g3" id="home-svc"></div>
+  <p style="margin-top:26px"><a class="btn ghost" href="#services">All services</a></p></div></section>
+ <section class="s alt"><div class="wrap"><div class="head"><h2>How a project runs</h2><p>A clear process with a fixed scope and a weekly demo, so you always know where things stand.</p></div>
+  <div class="steps"><div><h3>Discover</h3><p>We learn your customers, goals and constraints, then agree on scope and timeline.</p></div>
+  <div><h3>Design</h3><p>Wireframes and a clickable prototype you can react to before any code is written.</p></div>
+  <div><h3>Build</h3><p>Clean, tested code with a staging site updated every week.</p></div>
+  <div><h3>Launch</h3><p>Go-live, monitoring and a support plan so the site keeps performing.</p></div></div></div></section>
+ <section class="s"><div class="wrap"><div class="head"><h2>Concept projects</h2><p>Sample builds that show our style and the kind of sites we make. Client case studies will appear here as projects go live.</p></div><div class="grid g3" id="home-work"></div></div></section>
+ <section class="cta alt"><div class="wrap"><h2>Have a project in mind?</h2><p class="mut" style="margin-bottom:24px">Call, WhatsApp or write to us. A short chat is enough to get a quote.</p><a class="btn" href="#contact">Get a free quote</a></div></section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="p-about">
+ <section class="hero"><div class="wrap"><h1>A young team that cares about the details.</h1><p class="lead">VeloForge was started in Shahjahanpur by Saurabh and Aarav Kashyap with one belief: a website should work as hard as the business behind it.</p></div></section>
+ <section class="s alt"><div class="wrap"><div class="head"><h2>What we believe</h2></div><div class="grid g3">
+  <div class="card"><h3>Speed is a feature</h3><p>Fast sites rank better, convert better and cost less to run. We budget performance from day one.</p></div>
+  <div class="card"><h3>Plain communication</h3><p>No jargon and no surprises. You get weekly updates and a single point of contact.</p></div>
+  <div class="card"><h3>Built to last</h3><p>Documented, well-structured code that your team or any other developer can pick up.</p></div></div></div></section>
+ <section class="s"><div class="wrap"><div class="head"><h2>The people behind VeloForge</h2></div><div class="grid g2" id="team"></div></div></section>
+</div>
+
+<!-- SERVICES -->
+<div class="page" id="p-services">
+ <section class="hero"><div class="wrap"><h1>Services</h1><p class="lead">Everything you need to launch, grow and maintain a strong web presence.</p></div></section>
+ <section class="s alt"><div class="wrap"><div class="grid g2" id="svc"></div></div></section>
+ <section class="cta"><div class="wrap"><h2>Not sure what you need?</h2><a class="btn" href="#contact">Book a free consultation</a></div></section>
+</div>
+
+<!-- PORTFOLIO -->
+<div class="page" id="p-portfolio">
+ <section class="hero"><div class="wrap"><h1>Selected work</h1><p class="lead">Concept projects that show how we design and build. Real client work will be added here after each launch.</p></div></section>
+ <section class="s alt"><div class="wrap"><div class="row" id="filters" style="margin-bottom:28px"></div><div class="grid g3" id="work"></div></div></section>
+</div>
+
+<!-- PRICING -->
+<div class="page" id="p-pricing">
+ <section class="hero"><div class="wrap"><h1>Simple, fixed pricing.</h1><p class="lead">Every project starts with a free call. These are starting prices; the final quote depends on what you need.</p></div></section>
+ <section class="s alt"><div class="wrap"><div class="grid g3" id="plans"></div></div></section>
+ <section class="s"><div class="wrap"><div class="head"><h2>Common questions</h2></div><div id="faq"></div></div></section>
+</div>
+
+<!-- BLOG -->
+<div class="page" id="p-blog">
+ <section class="hero"><div class="wrap"><h1>Blog</h1><p class="lead">Practical notes on web performance, design and building for growth.</p></div></section>
+ <section class="s alt"><div class="wrap"><div class="grid g3" id="posts"></div></div></section>
+</div>
+
+<!-- REVIEWS -->
+<div class="page" id="p-reviews">
+ <section class="hero"><div class="wrap"><h1>What clients say</h1><p class="lead">Client reviews will be published here as projects go live. Until then, here is what you can hold us to.</p></div></section>
+ <section class="s alt"><div class="wrap"><div class="grid g3" id="rev"></div><p class="mut" style="margin-top:28px">Worked with us? We’d love to hear how it went. Write to saurabhkashyap6391@gmail.com.</p></div></section>
+</div>
+
+<!-- CAREERS -->
+<div class="page" id="p-careers">
+ <section class="hero"><div class="wrap"><h1>Build with us.</h1><p class="lead">We’re a young team in Shahjahanpur and we like working with people who care about craft. See a role that fits? Send us your work.</p></div></section>
+ <section class="s alt"><div class="wrap split"><div id="roles"></div>
+  <div class="card"><h3>Why VeloForge</h3><ul><li>Hands-on work on real client projects</li><li>Direct access to the founders</li><li>Room to learn and grow quickly</li><li>Flexible hours for the right person</li></ul></div></div></section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="p-contact">
+ <section class="hero"><div class="wrap"><h1>Let’s talk about your project.</h1><p class="lead">Share a few details and we’ll get back within one business day.</p></div></section>
+ <section class="s alt"><div class="wrap split">
+  <form id="cf" novalidate>
+   <label>Name<input name="n" autocomplete="name" required></label>
+   <label>Email<input name="e" type="email" autocomplete="email" required></label>
+   <label>Project type<select name="t"><option>New website</option><option>Website redesign</option><option>E-commerce store</option><option>Web application</option><option>SEO and performance</option><option>Maintenance and support</option></select></label>
+   <label>Budget<select name="b"><option>Under ₹15,000</option><option>₹15,000 – ₹40,000</option><option>₹40,000 – ₹1,00,000</option><option>₹1,00,000+</option></select></label>
+   <label>Tell us about it<textarea name="m" required></textarea></label>
+   <button class="btn" type="submit">Send message</button><p id="msg" role="status"></p>
+  </form>
+  <div class="card"><h3>Contact details</h3><p style="margin-top:12px"><a href="mailto:saurabhkashyap6391@gmail.com">saurabhkashyap6391@gmail.com</a><br><a href="tel:+918572988451">+91 85729 88451</a><br>Shahjahanpur, Uttar Pradesh, India</p><p style="margin-top:18px"><a class="btn ghost" href="https://wa.me/918572988451" rel="noopener">Message on WhatsApp</a></p></div>
+ </div></section>
+</div>
+</main>
+
+<footer><div class="wrap"><div class="fg">
+ <div><a href="#home" class="logo" style="margin-bottom:10px" aria-label="VeloForge home"><img class="lk" src="images/logo-full.jpg" alt="VeloForge"></a><p>Web development agency in Shahjahanpur, Uttar Pradesh.<br>saurabhkashyap6391@gmail.com<br>+91 85729 88451</p></div>
+ <div><h4>Company</h4><div id="f1"></div></div><div><h4>More</h4><div id="f2"></div></div></div>
+ <div class="copy">© <span id="yr">2026</span> VeloForge. All rights reserved.</div></div></footer>
+
+<script>
+(function(){
+var P=[["home","Home"],["services","Services"],["portfolio","Portfolio"],["pricing","Pricing"],["about","About"],["blog","Blog"],["reviews","Reviews"],["careers","Careers"]];
+var SV=[["Custom websites","Brand-led sites designed around your customers and built for speed.",["Responsive design","CMS integration","Accessibility checks"]],
+["E-commerce","Online stores that make buying simple and managing orders easy.",["Product catalogues","Secure checkout","Inventory sync"]],
+["Web applications","Dashboards, portals and internal tools built to scale with your team.",["Custom logic","API integrations","User roles"]],
+["UI/UX design","Research-backed interfaces tested with real users before development.",["Wireframes","Prototypes","Design systems"]],
+["SEO and performance","Technical fixes that raise rankings, speed and conversion rates.",["Core Web Vitals","Technical audits","Analytics setup"]],
+["Maintenance and support","Updates, security and monitoring so your site stays healthy.",["Uptime monitoring","Monthly updates","Priority fixes"]]];
+var WK=[["Northwind Retail","E-commerce","#1d4ed8,#60a5fa","Online store concept"],["Brightcare Clinics","Healthcare","#0e7490,#67e8f9","Appointment booking concept"],["Lumen Finance","Web app","#4338ca,#a5b4fc","Customer dashboard concept"],["Atlas Logistics","Web app","#1e3a8a,#93c5fd","Fleet tracking concept"],["Oak and Ember","Website","#334155,#94a3b8","Restaurant site concept"],["Pixelwave Studio","Website","#5b21b6,#c4b5fd","Portfolio and shop concept"]];
+var TM=[["Saurabh Kashyap","Founder and CEO","I started VeloForge to help local businesses get online properly. I stay involved in every project, from the first call to launch day.","images/saurabh.jpg"],["Aarav Kashyap","Co-founder","Aarav co-founded VeloForge and works with Saurabh on shaping the agency and the projects we take on.","images/aarav.jpg"]];
+var PL=[["Starter","₹14,999","A clean, fast site to get your business online.",["Up to 5 pages","Mobile-friendly design","Basic SEO setup","Contact form and WhatsApp button","2 rounds of changes"]],["Business","₹39,999","Best fit for growing businesses that want more.",["Up to 15 pages","Custom design","Blog or CMS","Analytics and SEO","30 days of free support"],1],["Custom","Let’s talk","For online stores, portals and web apps.",["Custom features","Payment and API integrations","Dedicated support","Ongoing maintenance plan"]]];
+var FQ=[["How long does a project take?","Most websites launch in four to eight weeks. Larger applications are scoped with a milestone plan."],["Do you offer ongoing support?","Yes. Support plans cover updates, security, backups and small improvements."],["Who owns the website?","You do. All code, designs and content are handed over at final payment."],["Can you redesign my existing site?","Yes. We audit what’s working first, then keep the best parts and rebuild the rest."]];
+var PS=[["Performance","Five fixes that cut page load time in half","8 min read"],["Design","How to structure a homepage that converts","6 min read"],["E-commerce","Checkout mistakes that cost you sales","7 min read"],["SEO","A plain guide to Core Web Vitals","9 min read"],["Strategy","Redesign or refresh? How to decide","5 min read"],["Development","Why maintainable code saves money","6 min read"]];
+var RV=[["We reply fast","Every message gets a response within one working day, usually sooner."],["Fixed scope, clear price","You agree the work and the cost before we start. No surprise bills."],["You own everything","Source code, designs and content are handed over to you when the project is done."]];
+var RL=[["Frontend Developer","Remote · Full-time","Build fast, accessible interfaces with modern JavaScript frameworks."],["Backend Developer","Remote · Full-time","Design APIs and services that power client applications."],["UI/UX Designer","Hybrid · Full-time","Own the design process from research to polished prototypes."],["Project Manager","Hybrid · Full-time","Keep projects on scope, on time and clients well informed."]];
+var $=function(i){return document.getElementById(i)};
+function li(a){return a.map(function(x){return"<li>"+x+"</li>"}).join("")}
+$("home-svc").innerHTML=SV.slice(0,3).map(function(s){return'<div class="card"><h3>'+s[0]+"</h3><p>"+s[1]+"</p></div>"}).join("");
+$("svc").innerHTML=SV.map(function(s){return'<div class="card"><h3>'+s[0]+"</h3><p>"+s[1]+"</p><ul>"+li(s[2])+"</ul></div>"}).join("");
+function wk(w){var c=w[2].split(",");return'<article class="card"><div class="thumb" style="background:linear-gradient(135deg,'+c[0]+","+c[1]+')">'+w[0]+"</div><span class=\"tag\">"+w[1]+"</span><h3>"+w[3]+"</h3></article>"}
+$("home-work").innerHTML=WK.slice(0,3).map(wk).join("");
+function drawWork(f){$("work").innerHTML=WK.filter(function(w){return f==="All"||w[1]===f}).map(wk).join("")}
+var cats=["All"].concat(WK.map(function(w){return w[1]}).filter(function(v,i,a){return a.indexOf(v)===i}));
+$("filters").innerHTML=cats.map(function(c,i){return'<button class="btn ghost" data-f="'+c+'" aria-pressed="'+(i===0)+'">'+c+"</button>"}).join("");
+$("filters").onclick=function(e){var f=e.target.getAttribute("data-f");if(!f)return;[].forEach.call($("filters").children,function(b){b.setAttribute("aria-pressed",b===e.target);b.style.borderColor=b===e.target?"var(--ember)":""});drawWork(f)};
+$("filters").firstChild.style.borderColor="var(--ember)";drawWork("All");
+$("team").innerHTML=TM.map(function(t){return'<div class="card">'+(t[3]?'<img class="ph" src="'+t[3]+'" alt="Portrait of '+t[0]+'">':'<div class="thumb" style="height:120px;background:var(--bg2)">'+t[0].split(" ").map(function(x){return x[0]}).join("")+"</div>")+"<h3>"+t[0]+'</h3><p class="mut" style="margin:2px 0 10px">'+t[1]+"</p><p>"+t[2]+"</p></div>"}).join("");
+$("plans").innerHTML=PL.map(function(p){return'<div class="card'+(p[4]?" hot":"")+'"><h3>'+p[0]+'</h3><div class="price">'+p[1]+(p[1][0]==="₹"?" <small>starting</small>":"")+"</div><p>"+p[2]+"</p><ul>"+li(p[3])+'</ul><p style="margin-top:22px"><a class="btn'+(p[4]?"":" ghost")+'" href="#contact">Choose '+p[0]+"</a></p></div>"}).join("");
+$("faq").innerHTML=FQ.map(function(f){return"<details><summary>"+f[0]+"</summary><p>"+f[1]+"</p></details>"}).join("");
+$("posts").innerHTML=PS.map(function(p){return'<article class="card"><span class="tag">'+p[0]+"</span><h3>"+p[1]+'</h3><p style="margin-top:12px">'+p[2]+"</p></article>"}).join("");
+$("rev").innerHTML=RV.map(function(r){return'<div class="card"><h3>'+r[0]+"</h3><p>"+r[1]+"</p></div>"}).join("");
+$("roles").innerHTML=RL.map(function(r){return"<details><summary>"+r[0]+"</summary><p>"+r[1]+". "+r[2]+'</p><p style="margin-top:12px"><a class="btn ghost" href="mailto:saurabhkashyap6391@gmail.com?subject='+encodeURIComponent("Application: "+r[0])+'">Apply</a></p></details>'}).join("");
+var nl=P.map(function(p){return'<a href="#'+p[0]+'" data-p="'+p[0]+'">'+p[1]+"</a>"}).join("");
+$("nav").innerHTML=nl+'<a class="btn" href="#contact" data-p="contact">Contact</a>';
+$("drawer").innerHTML=nl+'<a href="#contact" data-p="contact">Contact</a>';
+$("f1").innerHTML=P.slice(0,5).map(function(p){return'<a href="#'+p[0]+'">'+p[1]+"</a>"}).join("");
+$("f2").innerHTML=P.slice(5).map(function(p){return'<a href="#'+p[0]+'">'+p[1]+"</a>"}).join("")+'<a href="#contact">Contact</a>';
+$("yr").textContent=new Date().getFullYear();
+var tl=["$ veloforge build --prod","<span class=ok>✓</span> Compiled 214 modules","<span class=ok>✓</span> Images optimised, 62% smaller","<span class=ok>✓</span> Accessibility checks passed","<span class=em>→</span> Performance score: 98","<span class=ok>✓</span> Deployed to production"];
+var tdone=false;
+function term(){if(tdone)return;tdone=true;var b=$("term");b.innerHTML=tl.map(function(t){return'<div class="l">'+t+"</div>"}).join("");var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;[].forEach.call(b.children,function(l,i){setTimeout(function(){l.classList.add("on")},reduce?0:350+i*520)})}
+var ids=P.map(function(p){return p[0]}).concat("contact");
+function route(){var h=(location.hash||"#home").slice(1);if(ids.indexOf(h)<0)h="home";
+[].forEach.call(document.querySelectorAll(".page"),function(p){p.classList.toggle("show",p.id==="p-"+h)});
+[].forEach.call(document.querySelectorAll("[data-p]"),function(a){a.classList.toggle("on",a.getAttribute("data-p")===h);if(a.getAttribute("data-p")===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+$("drawer").classList.remove("open");$("burger").setAttribute("aria-expanded","false");
+var t={home:"Web development agency",about:"About",services:"Services",portfolio:"Portfolio",pricing:"Pricing",blog:"Blog",reviews:"Reviews",careers:"Careers",contact:"Contact"};
+document.title="VeloForge – "+t[h];window.scrollTo(0,0);if(h==="home")term()}
+window.addEventListener("hashchange",route);
+$("burger").onclick=function(){var o=$("drawer").classList.toggle("open");this.setAttribute("aria-expanded",o)};
+$("cf").onsubmit=function(e){e.preventDefault();var f=e.target,m=$("msg");m.style.color="var(--ember2)";
+if(!f.n.value.trim()||!/^\S+@\S+\.\S+$/.test(f.e.value)||!f.m.value.trim()){m.textContent="Please add your name, a valid email and a short message.";return}
+var body="Name: "+f.n.value+"\nEmail: "+f.e.value+"\nProject: "+f.t.value+"\nBudget: "+f.b.value+"\n\n"+f.m.value;
+location.href="mailto:saurabhkashyap6391@gmail.com?subject="+encodeURIComponent("New project enquiry from "+f.n.value)+"&body="+encodeURIComponent(body);
+m.style.color="var(--ok)";m.textContent="Your email app should open with the message ready to send."};
+route();
+})();
+</script>
+</body>
+</html>
